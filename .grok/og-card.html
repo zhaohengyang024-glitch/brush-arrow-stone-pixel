@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @font-face {
+      font-family: "Noto Serif SC";
+      src: url("./NotoSerifSC-Medium.otf") format("opentype");
+      font-weight: 500;
+      font-style: normal;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #1C1612;
+    }
+    .stage {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background:
+        radial-gradient(ellipse 92% 78% at 16% 90%, rgba(196, 139, 122, 0.32), transparent 60%),
+        radial-gradient(ellipse 50% 46% at 84% 10%, rgba(72, 50, 40, 0.4), transparent 58%),
+        radial-gradient(ellipse 64% 52% at 50% 40%, rgba(243, 235, 225, 0.05), transparent 64%),
+        repeating-linear-gradient(
+          86.5deg,
+          #1C1612 0px,
+          #201914 3px,
+          #1C1612 6px,
+          #261e18 10px,
+          #18120f 14px,
+          #1C1612 18px
+        );
+    }
+    .grain, .vignette, .art, .lockup {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .grain {
+      opacity: 0.22;
+      mix-blend-mode: overlay;
+    }
+    .vignette {
+      background:
+        radial-gradient(ellipse 78% 72% at 50% 48%, transparent 42%, rgba(12, 9, 7, 0.55) 100%);
+    }
+    .lockup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+    }
+    .title {
+      font-family: "Noto Serif SC", "WenQuanYi Zen Hei", serif;
+      font-weight: 500;
+      font-size: 124px;
+      line-height: 1;
+      color: #F3EBE1;
+      letter-spacing: 0.26em;
+      margin-left: 0.26em;
+      text-shadow:
+        0 1px 0 rgba(243, 235, 225, 0.18),
+        0 2px 22px rgba(28, 22, 18, 0.7),
+        0 18px 40px rgba(28, 22, 18, 0.45);
+    }
+    .title .q {
+      font-size: 0.72em;
+      letter-spacing: 0;
+      opacity: 0.72;
+      vertical-align: 0.04em;
+    }
+    .rule {
+      width: 72px;
+      height: 1px;
+      background: #C48B7A;
+      opacity: 0.85;
+      position: relative;
+    }
+    .rule::before,
+    .rule::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #C48B7A;
+      transform: translateY(-50%);
+    }
+    .rule::before { left: -10px; }
+    .rule::after { right: -10px; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <svg class="art" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="1.1" />
+        </filter>
+        <filter id="shadow">
+          <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0c0907" flood-opacity="0.55" />
+        </filter>
+        <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F7F1E8" />
+          <stop offset="48%" stop-color="#F3EBE1" />
+          <stop offset="100%" stop-color="#E4D6C6" />
+        </linearGradient>
+        <linearGradient id="flap" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#EFE4D6" />
+          <stop offset="100%" stop-color="#DCCBB8" />
+        </linearGradient>
+        <radialGradient id="wax" cx="38%" cy="32%" r="70%">
+          <stop offset="0%" stop-color="#D9A394" />
+          <stop offset="55%" stop-color="#C48B7A" />
+          <stop offset="100%" stop-color="#9A6558" />
+        </radialGradient>
+        <radialGradient id="petalA" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#E2B7A8" />
+          <stop offset="70%" stop-color="#C48B7A" />
+          <stop offset="100%" stop-color="#8E5C50" />
+        </radialGradient>
+        <radialGradient id="petalB" cx="40%" cy="28%" r="70%">
+          <stop offset="0%" stop-color="#EFE0D4" />
+          <stop offset="65%" stop-color="#D2A090" />
+          <stop offset="100%" stop-color="#A06B5C" />
+        </radialGradient>
+        <linearGradient id="stem" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#6A5346" />
+          <stop offset="100%" stop-color="#3A2C26" />
+        </linearGradient>
+      </defs>
+
+      <!-- fallen petals -->
+      <g opacity="0.88" filter="url(#soft)">
+        <ellipse cx="430" cy="586" rx="18" ry="10" fill="#C48B7A" transform="rotate(-18 430 586)" />
+        <ellipse cx="708" cy="598" rx="14" ry="8" fill="#B07A6A" transform="rotate(22 708 598)" />
+        <ellipse cx="980" cy="572" rx="16" ry="9" fill="#C9A090" transform="rotate(-8 980 572)" />
+      </g>
+
+      <!-- dried ranunculus, right -->
+      <g transform="translate(930,430)">
+        <path d="M-8,28 C-18,90 -6,150 10,210" fill="none" stroke="url(#stem)" stroke-width="3.2" stroke-linecap="round" />
+        <path d="M18,46 C40,88 62,118 86,148" fill="none" stroke="#4A3A32" stroke-width="2.2" stroke-linecap="round" />
+        <path d="M-28,58 C-48,96 -70,128 -86,154" fill="none" stroke="#3F322C" stroke-width="2" stroke-linecap="round" />
+        <g transform="translate(-8,8)">
+          <ellipse cx="0" cy="8" rx="28" ry="16" fill="url(#petalA)" transform="rotate(8)" />
+          <ellipse cx="16" cy="-2" rx="26" ry="15" fill="url(#petalB)" transform="rotate(46)" />
+          <ellipse cx="-18" cy="0" rx="25" ry="14" fill="url(#petalA)" transform="rotate(-42)" />
+          <ellipse cx="4" cy="-16" rx="22" ry="13" fill="url(#petalB)" transform="rotate(8)" />
+          <ellipse cx="-8" cy="-12" rx="20" ry="12" fill="#D7A394" transform="rotate(-18)" />
+          <ellipse cx="10" cy="6" rx="18" ry="11" fill="#B27868" transform="rotate(62)" />
+          <circle cx="0" cy="-2" r="7" fill="#8A5A4E" />
+          <circle cx="0" cy="-2" r="3.2" fill="#E8C8B8" opacity="0.7" />
+        </g>
+        <g transform="translate(78,132) rotate(18)">
+          <ellipse cx="0" cy="4" rx="16" ry="9" fill="url(#petalB)" />
+          <ellipse cx="10" cy="-2" rx="14" ry="8" fill="#C48B7A" transform="rotate(40)" />
+          <ellipse cx="-10" cy="-1" rx="13" ry="8" fill="#B07A6A" transform="rotate(-36)" />
+          <circle cx="0" cy="0" r="4" fill="#8E5C50" />
+        </g>
+        <g transform="translate(-86,138) rotate(-24)">
+          <ellipse cx="0" cy="3" rx="13" ry="8" fill="#C9A090" />
+          <ellipse cx="8" cy="-2" rx="12" ry="7" fill="#B07A6A" transform="rotate(38)" />
+          <circle cx="0" cy="0" r="3.4" fill="#7A4E44" />
+        </g>
+      </g>
+
+      <!-- envelope -->
+      <g transform="translate(268,448) rotate(-11)" filter="url(#shadow)">
+        <rect x="0" y="38" width="340" height="210" rx="6" fill="url(#paper)" />
+        <path d="M0,44 L170,148 L340,44 L340,38 Q340,32 334,32 L6,32 Q0,32 0,38 Z" fill="url(#flap)" />
+        <path d="M8,44 L170,140 L332,44" fill="none" stroke="#C48B7A" stroke-width="1.4" opacity="0.55" />
+        <rect x="0" y="38" width="340" height="210" rx="6" fill="none" stroke="#D8C7B4" stroke-width="1.2" />
+        <!-- paper fiber -->
+        <g opacity="0.12" stroke="#8A6F5C" stroke-width="0.6">
+          <path d="M24,92 C80,86 140,98 210,90" fill="none" />
+          <path d="M40,168 C110,160 180,176 260,166" fill="none" />
+          <path d="M52,214 C120,208 190,220 270,210" fill="none" />
+        </g>
+        <!-- wax seal -->
+        <g transform="translate(170,118)">
+          <ellipse cx="2" cy="10" rx="34" ry="10" fill="#1C1612" opacity="0.22" />
+          <circle cx="0" cy="0" r="32" fill="url(#wax)" />
+          <circle cx="0" cy="0" r="24" fill="none" stroke="#F3EBE1" stroke-width="1.6" opacity="0.55" />
+          <circle cx="0" cy="0" r="18" fill="none" stroke="#9A6558" stroke-width="1.1" opacity="0.7" />
+          <!-- impressed sprig -->
+          <path d="M0,-9 C-1,-2 0,4 0,10" fill="none" stroke="#7A4A40" stroke-width="1.5" stroke-linecap="round" />
+          <ellipse cx="-6" cy="-1" rx="6" ry="3.2" fill="#8E5C50" transform="rotate(-28)" />
+          <ellipse cx="6" cy="1" rx="6" ry="3.2" fill="#8E5C50" transform="rotate(32)" />
+          <ellipse cx="-4" cy="6" rx="5" ry="2.6" fill="#7A4A40" transform="rotate(-18)" />
+          <circle cx="-8" cy="-12" r="6" fill="#E8C4B6" opacity="0.28" />
+        </g>
+      </g>
+    </svg>
+
+    <svg class="grain" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <filter id="n">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#n)" />
+    </svg>
+    <div class="vignette"></div>
+    <div class="lockup">
+      <div class="title"><span class="q">「</span>予你<span class="q">」</span></div>
+      <div class="rule"></div>
+    </div>
+  </div>
+</body>
+</html>

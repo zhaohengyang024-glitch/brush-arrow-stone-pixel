@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "予你",
+      "hasCanvas": false,
+      "bodyTextLen": 64,
+      "bodyTextHash": "cff5965aff786697c5732c7c7b197d2b1245d7a1c5f5875ebeeb0064126c3a26",
+      "bodyTextPrefix": "LOVE OS 亲爱的 我们第一次见面，是哪一天？ 示例答案是第一次见面的日期。可在设置里改成只属于你们的。 进入 我是建档的人",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "予你",
+      "hasCanvas": false,
+      "bodyTextLen": 64,
+      "bodyTextHash": "cff5965aff786697c5732c7c7b197d2b1245d7a1c5f5875ebeeb0064126c3a26",
+      "bodyTextPrefix": "LOVE OS 亲爱的 我们第一次见面，是哪一天？ 示例答案是第一次见面的日期。可在设置里改成只属于你们的。 进入 我是建档的人",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
